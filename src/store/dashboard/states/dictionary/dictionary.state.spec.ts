@@ -1,5 +1,5 @@
 import { NgxsModule, Store } from '@ngxs/store';
-import { async, TestBed } from '@angular/core/testing';
+import { waitForAsync, TestBed } from '@angular/core/testing';
 import { DictionaryState, DictionaryStateModel } from './dictionary.state';
 import { DictionaryReset, SetDictionaryData } from './dictionary.actions';
 
@@ -27,14 +27,16 @@ const data = [
 describe('[TEST]: Dictionary state', () => {
   let store: Store;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NgxsModule.forRoot([DictionaryState])],
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NgxsModule.forRoot([DictionaryState])],
+      })
+        .compileComponents()
+        .then();
+      store = TestBed.inject(Store);
     })
-      .compileComponents()
-      .then();
-    store = TestBed.get(Store);
-  }));
+  );
 
   it('Should be correct dispatch and dictionary is empty', () => {
     const dictionary: DictionaryStateModel = {
@@ -62,7 +64,7 @@ describe('[TEST]: Dictionary state', () => {
     expect(actual).toEqual(dictionary);
   });
 
-  it('should be reset state', function () {
+  it('should be reset state', () => {
     const dictionary: DictionaryStateModel = {
       content: [],
       page: 0,

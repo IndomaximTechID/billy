@@ -15,6 +15,5 @@
     "lib": ["es2018", "dom"],
     /* Temporary skip the lib check, bug in Clarity see: https://github.com/vmware/clarity/issues/5015#issuecomment-688455810 */
     "skipLibCheck": true
-  },
-  "include": ["src/environments", "src/*.ts"]
+  }
 }

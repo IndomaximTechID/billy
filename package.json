@@ -17,7 +17,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "eslint": "eslint \"src/**/*.ts\"",
+    "eslint": "eslint \"src/app/**/*.ts\"",
     "format": "prettier --write \"**/*.{js,ts,html,css,scss,md,json,yml}\""
   },
   "bugs": {

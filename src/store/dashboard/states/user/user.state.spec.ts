@@ -1,19 +1,21 @@
 import { NgxsModule, Store } from '@ngxs/store';
-import { async, TestBed } from '@angular/core/testing';
+import { waitForAsync, TestBed } from '@angular/core/testing';
 import { PersonStateModel, UserState } from './user.state';
 import { SetUser } from './user.actions';
 
 describe('[TEST]: User state', () => {
   let store: Store;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NgxsModule.forRoot([UserState])],
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NgxsModule.forRoot([UserState])],
+      })
+        .compileComponents()
+        .then();
+      store = TestBed.inject(Store);
     })
-      .compileComponents()
-      .then();
-    store = TestBed.get(Store);
-  }));
+  );
 
   it('Should be state is PersonStateModel', () => {
     const person: PersonStateModel = {

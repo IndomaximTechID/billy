@@ -1,19 +1,21 @@
 import { NgxsModule, Store } from '@ngxs/store';
-import { async, TestBed } from '@angular/core/testing';
+import { waitForAsync, TestBed } from '@angular/core/testing';
 import { AuthenticationStateModel, AuthStateModule } from './auth.state';
 import { SetAuthData } from './auth.actions';
 
 describe('[TEST]: AuthStore', () => {
   let store: Store;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [NgxsModule.forRoot([AuthStateModule])],
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [NgxsModule.forRoot([AuthStateModule])],
+      })
+        .compileComponents()
+        .then();
+      store = TestBed.inject(Store);
     })
-      .compileComponents()
-      .then();
-    store = TestBed.get(Store);
-  }));
+  );
 
   it('Should be correct dispatch and value is empty', () => {
     const Authentication: AuthenticationStateModel = {
