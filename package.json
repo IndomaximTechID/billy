@@ -1,14 +1,29 @@
 {
   "name": "billy",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndomaximTechID/billy.git"
+  },
+  "author": {
+    "email": "lognus21@gmail.com",
+    "name": "Eries Trisnadi"
+  },
   "scripts": {
     "ng": "ng",
+    "prettier": "prettier",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "eslint": "eslint 'packages/**/*.ts'",
+    "format": "prettier --write \"**/*.{js,ts,html,css,scss,md,json,yml}\""
   },
+  "bugs": {
+    "url": "https://github.com/IndomaximTechID/billy/issues"
+  },
+  "homepage": "https://github.com/IndomaximTechID/billy#readme",
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.1",
@@ -37,11 +52,18 @@
     "@angular-devkit/build-angular": "~0.1001.1",
     "@angular/cli": "~10.1.1",
     "@angular/compiler-cli": "~10.1.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@ngxs/schematics": "^0.0.1-alpha.5",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "bundlesize": "^0.18.0",
     "codelyzer": "^6.0.0",
+    "eslint": "^7.9.0",
+    "husky": "^4.3.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -49,6 +71,8 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
