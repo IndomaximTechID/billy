@@ -29,4 +29,5 @@ script:
   - yarn build
 
   # Run unit, and E2E tests
-  - yarn test:cy
+  - yarn test:ci
+  - yarn test:ci:e2e
