@@ -1,24 +1,32 @@
-os:
-  - linux
-  - osx
-  - windows
 language: node_js
-cache: false
+sudo: false
 node_js:
   - 'lts/*'
-services:
-  - xvfb
-before_script:
-  - export DISPLAY=:99.0
+
+# Since Travis is running on the Ubuntu 16+
+# this library is necessary
+# see https://github.com/cypress-io/cypress/issues/4069#issuecomment-488816887
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+
+cache: false
+
+env:
+  global:
+    - CYPRESS_CACHE_FOLDER = "~/.cache/Cypress"
+
 install:
-  - yarn config set no-progress
   - yarn install --frozen-lockfile --non-interactive
+
 script:
   # Run static analyzers
   - yarn lint
   - yarn eslint
 
-  # Run unit, and E2E tests
-  - if [ "$TRAVIS_OS_NAME" != "windows" ]; then yarn test ; fi
-  - if [ "$TRAVIS_OS_NAME" != "windows" ]; then yarn e2e ; fi
+  # Build packages and integration app
   - yarn build
+
+  # Run unit, and E2E tests
+  - yarn test:cy
