@@ -3,23 +3,23 @@
 First off, thanks for taking the time to contribute!
 We appreciate contributions in forms of:
 
-* issues
-* help answering questions in [issues](https://github.com/IndomaximTechID/billy/issues)
-* fixing bugs via [pull-requests](https://github.com/IndomaximTechID/billy/pulls)
-* promoting billy
-* sharing ideas
+- issues
+- help answering questions in [issues](https://github.com/IndomaximTechID/billy/issues)
+- fixing bugs via [pull-requests](https://github.com/IndomaximTechID/billy/pulls)
+- promoting billy
+- sharing ideas
 
 #### Table Of Contents
 
 1. [Commit Message Guidelines](#1)
-  1.1 [Commit Message Format](#1.1)
-  1.2 [Revert](#1.2)
-  1.3 [Type](#1.3)
+   1.1 [Commit Message Format](#1.1)
+   1.2 [Revert](#1.2)
+   1.3 [Type](#1.3)
 2. [Developing](#2)
 3. [Build](#3)
 4. [Test](#4)
-  4.1 [Commit Message Format](#4.1)
-  4.2 [Revert](#4.2)
+   4.1 [Commit Message Format](#4.1)
+   4.2 [Revert](#4.2)
 5. [Code Scafolding](#5)
 6. [Further help](#6)
 
@@ -79,7 +79,9 @@ Must be one of the following:
 - **test**: Adding missing tests or correcting existing tests
 
 # <a name="2"></a> Developing
+
 #### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1, with additional [NGXS](https://www.ngxs.io/) version 3.3.2, and also [Claity Design](https://clarity.design/) version 4.0.1.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 # <a name="3"></a> Build

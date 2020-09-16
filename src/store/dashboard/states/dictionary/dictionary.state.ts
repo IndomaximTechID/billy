@@ -17,12 +17,10 @@ export interface DictionaryStateModel {
     page: 0,
     size: 0,
     totalPages: 0,
-    totalElements: 0
-  }
+    totalElements: 0,
+  },
 })
-
 @Injectable()
-
 export class DictionaryState {
   @Selector()
   public static getDictionaryState(state: DictionaryStateModel): DictionaryStateModel {
@@ -30,7 +28,7 @@ export class DictionaryState {
   }
 
   @Selector()
-  public static getDictionaryContent(state: DictionaryStateModel) {
+  public static getDictionaryContent(state: DictionaryStateModel): any {
     return state.content;
   }
 
@@ -43,18 +41,21 @@ export class DictionaryState {
   }
 
   @Action(SetDictionaryData)
-  public setTasks({ setState }: StateContext<DictionaryStateModel>, { payload }: SetDictionaryData) {
+  public setTasks(
+    { setState }: StateContext<DictionaryStateModel>,
+    { payload }: SetDictionaryData
+  ): void {
     setState(DictionaryState.setInstanceState(payload));
   }
 
   @Action(DictionaryReset)
-  public resetTasks({ setState }: StateContext<DictionaryStateModel>) {
+  public resetTasks({ setState }: StateContext<DictionaryStateModel>): void {
     const initialState = {
       content: [],
       page: 0,
       size: 0,
       totalPages: 0,
-      totalElements: 0
+      totalElements: 0,
     };
     setState(initialState);
   }

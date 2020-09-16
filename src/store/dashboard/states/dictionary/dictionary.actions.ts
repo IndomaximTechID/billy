@@ -8,6 +8,4 @@ export class SetDictionaryData {
 
 export class DictionaryReset {
   public static readonly type = '[Dictionary] Reset dictionary action';
-
-  constructor() {}
 }

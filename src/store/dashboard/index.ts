@@ -7,9 +7,7 @@ export const DashboardStates = [DictionaryState, UserState];
 
 @State({
   name: 'dashboardStateModule',
-  children: DashboardStates
+  children: DashboardStates,
 })
-
 @Injectable()
-
 export class DashboardStateModule {}

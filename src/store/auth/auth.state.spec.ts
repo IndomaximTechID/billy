@@ -8,7 +8,7 @@ describe('[TEST]: AuthStore', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgxsModule.forRoot([AuthStateModule])]
+      imports: [NgxsModule.forRoot([AuthStateModule])],
     })
       .compileComponents()
       .then();
@@ -22,7 +22,7 @@ describe('[TEST]: AuthStore', () => {
       lastName: '',
       fullName: '',
       email: '',
-      roles: []
+      roles: [],
     };
     store.dispatch(new SetAuthData(Authentication));
     const actual = store.selectSnapshot<AuthenticationStateModel>(AuthStateModule.getAuthData);
@@ -36,7 +36,7 @@ describe('[TEST]: AuthStore', () => {
       lastName: 'Gordon',
       fullName: 'Adam Gordon',
       email: 'agordon@google.com',
-      roles: ['ADMIN']
+      roles: ['ADMIN'],
     };
 
     store.dispatch(new SetAuthData(authentication));

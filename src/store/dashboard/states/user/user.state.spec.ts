@@ -8,7 +8,7 @@ describe('[TEST]: User state', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgxsModule.forRoot([UserState])]
+      imports: [NgxsModule.forRoot([UserState])],
     })
       .compileComponents()
       .then();
@@ -25,7 +25,7 @@ describe('[TEST]: User state', () => {
       lastName: '',
       fullName: '',
       positionId: '',
-      positionName: ''
+      positionName: '',
     };
     store.dispatch(new SetUser(person));
     const actual = store.selectSnapshot(({ user }) => user);
@@ -43,7 +43,7 @@ describe('[TEST]: User state', () => {
       lastName: 'Gordon',
       fullName: 'Adam Gordon',
       positionId: '102003',
-      positionName: 'admin'
+      positionName: 'admin',
     };
 
     store.dispatch(new SetUser(person));

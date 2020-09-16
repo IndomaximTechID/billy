@@ -12,11 +12,9 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     /* Temporary skip the lib check, bug in Clarity see: https://github.com/vmware/clarity/issues/5015#issuecomment-688455810 */
     "skipLibCheck": true
-  }
+  },
+  "include": ["src/environments", "src/*.ts"]
 }

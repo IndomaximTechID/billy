@@ -11,7 +11,7 @@ const data = [
     mainCuratorUserId: 'admin',
     mainCuratorName: 'Adam Gordon',
     backupCuratorUserId: 'manager',
-    backupCuratorName: 'Alexander Chester'
+    backupCuratorName: 'Alexander Chester',
   },
   {
     id: '322',
@@ -20,8 +20,8 @@ const data = [
     mainCuratorUserId: 'manager',
     mainCuratorName: 'Alexander Chester',
     backupCuratorUserId: 'manager',
-    backupCuratorName: 'Amanda Brian'
-  }
+    backupCuratorName: 'Amanda Brian',
+  },
 ];
 
 describe('[TEST]: Dictionary state', () => {
@@ -29,7 +29,7 @@ describe('[TEST]: Dictionary state', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgxsModule.forRoot([DictionaryState])]
+      imports: [NgxsModule.forRoot([DictionaryState])],
     })
       .compileComponents()
       .then();
@@ -42,7 +42,7 @@ describe('[TEST]: Dictionary state', () => {
       page: 0,
       size: 0,
       totalPages: 0,
-      totalElements: 0
+      totalElements: 0,
     };
     store.dispatch(new SetDictionaryData(dictionary));
     const actual = store.selectSnapshot(DictionaryState.getDictionaryState);
@@ -55,20 +55,20 @@ describe('[TEST]: Dictionary state', () => {
       page: 0,
       size: 20,
       totalPages: 2,
-      totalElements: 1
+      totalElements: 1,
     };
     store.dispatch(new SetDictionaryData(dictionary));
     const actual = store.selectSnapshot(DictionaryState.getDictionaryState);
     expect(actual).toEqual(dictionary);
   });
 
-  it('should be reset state', function() {
+  it('should be reset state', function () {
     const dictionary: DictionaryStateModel = {
       content: [],
       page: 0,
       size: 0,
       totalPages: 0,
-      totalElements: 0
+      totalElements: 0,
     };
     store.dispatch(new DictionaryReset());
     const actual = store.selectSnapshot(DictionaryState.getDictionaryState);

@@ -8,13 +8,13 @@ import { environment } from './../environments/environment';
 export const STATES_MODULES = [AuthStateModule, DashboardStateModule, ...DashboardStates];
 
 export const OPTIONS_CONFIG: Partial<NgxsConfig> = {
-  developmentMode: !environment.production
+  developmentMode: !environment.production,
 };
 
 export const DEVTOOLS_REDUX_CONFIG: NgxsDevtoolsOptions = {
-  disabled: environment.production
+  disabled: environment.production,
 };
 
 export const LOGGER_CONFIG: NgxsLoggerPluginOptions = {
-  disabled: environment.production
+  disabled: environment.production,
 };

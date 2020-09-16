@@ -25,12 +25,10 @@ export interface PersonStateModel {
     positionId: '',
     positionName: '',
     departmentCode: '',
-    departmentName: ''
-  }
+    departmentName: '',
+  },
 })
-
 @Injectable()
-
 export class UserState {
   @Selector()
   public static getUser(state: PersonStateModel): PersonStateModel {
@@ -38,7 +36,7 @@ export class UserState {
   }
 
   @Action(SetUser)
-  public setUser(ctx: StateContext<PersonStateModel>, { payload }: SetUser) {
+  public setUser(ctx: StateContext<PersonStateModel>, { payload }: SetUser): void {
     ctx.setState(payload);
   }
 }
