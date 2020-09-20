@@ -1,7 +1,7 @@
 export abstract class BasePo {
   abstract pageUrl: string;
 
-  navigateTo() {
+  navigateTo(): void {
     cy.visit(this.pageUrl);
   }
 }
