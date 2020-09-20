@@ -14,6 +14,7 @@ checks:
       threshold: 50
 exclude_paths:
   - '.github/'
+  - '**/**.spec.ts'
 ratings:
   paths:
     - 'src/**/**.ts'
